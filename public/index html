@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Berhadiah</title>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kuis Tebak Nomor Berhadiah!</h1>
+            <p>Pilih nomor keberuntunganmu dari 1-1000!</p>
+        </header>
+
+        <section id="countdown-section">
+            <h2>Waktu Tersisa: <span id="countdown">Loading...</span></h2>
+        </section>
+
+        <section id="number-selection">
+            <h2>Pilih Nomor Anda</h2>
+            <div class="numbers-grid">
+                </div>
+            <div id="selection-form" style="display: none;">
+                <input type="number" id="selected-number-input" readonly>
+                <input type="tel" id="whatsapp-input" placeholder="Masukkan Nomor WhatsApp Anda (contoh: 081234567890)" required>
+                <button id="submit-selection">Kunci Pilihan!</button>
+                <p id="error-message" class="error"></p>
+            </div>
+        </section>
+
+        <section id="leaderboard" style="display: none;">
+            <h2>Pengumuman Pemenang!</h2>
+            <table id="winner-table">
+                <thead>
+                    <tr>
+                        <th>Peringkat</th>
+                        <th>Nomor Pemenang</th>
+                        <th>WhatsApp (Sensor)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Kuis Berhadiah. Semua hak dilindungi.</p>
+            <p><a href="#">Syarat & Ketentuan</a> | <a href="#">Kebijakan Privasi</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
 
