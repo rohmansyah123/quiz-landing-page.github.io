@@ -1,1 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex; /* Untuk centering */
+    justify-content: center; /* Centering horizontal */
+    align-items: flex-start; /* Centering vertikal (dari atas) */
+    min-height: 100vh; /* Pastikan tinggi minimal viewport */
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Batasi lebar kontainer utama */
+    width: 100%; /* Pastikan mengisi lebar yang tersedia */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+header h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Responsif grid */
+    gap: 8px;
+    margin-top: 20px;
+    max-height: 400px; /* Batasi tinggi untuk scroll */
+    overflow-y: auto; /* Aktifkan scroll jika melebihi tinggi */
+    padding-right: 5px; /* Untuk estetika scrollbar */
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.number-item {
+    padding: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e9e9e9;
+    transition: background-color 0.2s ease;
+    user-select: none; /* Cegah teks terseleksi */
+    min-width: 40px; /* Pastikan ukuran minimal */
+}
+
+.number-item:hover:not(.selected):not(.disabled) {
+    background-color: #dcdcdc;
+}
+
+.number-item.selected {
+    background-color: #28a745;
+    color: white;
+    cursor: not-allowed;
+    border-color: #28a745;
+}
+
+.number-item.disabled { /* Untuk lazy load placeholder atau nomor yang sudah diambil */
+    background-color: #f5f5f5;
+    color: #aaa;
+    cursor: not-allowed;
+    border-color: #eee;
+}
+
+/* Form Styling */
+#selection-form {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+#selection-form input[type="number"],
+#selection-form input[type="tel"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#selection-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+#selection-form button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Winner Table Styling */
+#winner-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#winner-table th, #winner-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#winner-table th {
+    background-color: #f2f2f2;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .numbers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+        gap: 5px;
+    }
+    #selection-form input,
+    #selection-form button {
+        font-size: 0.9em;
+    }
+}
 
